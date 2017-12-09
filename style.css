@@ -1,0 +1,16 @@
+* {
+
+}
+
+.container {
+  display: grid;
+  width: 800px;
+  height: 800px;
+  border: 1px #000 solid;
+  margin: 0 auto;
+
+}
+
+.box {
+  border: 1px #a1a3b0 solid;
+}
