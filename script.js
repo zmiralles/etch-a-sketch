@@ -1,7 +1,3 @@
-
-
-
-
 function generateGrid(squarePerSide) {
   const container = document.querySelector('.container');
 
@@ -18,9 +14,12 @@ function generateGrid(squarePerSide) {
   }
 }
 
+generateGrid(16)
 
-/*for (i = 0; i < 256; i++){
-  addBox();
-}*/
+const gridItem = document.querySelectorAll('.box');
 
-generateGrid(64)
+gridItem.forEach((box) => {
+  box.addEventListener('mouseover', (e) => {
+    box.classList.add('hover')
+  });
+});
