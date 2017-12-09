@@ -1,5 +1,7 @@
+const container = document.querySelector('.container');
+
 function generateGrid(squarePerSide) {
-  const container = document.querySelector('.container');
+
 
   function addBox() {
     const box = document.createElement('div');
@@ -12,14 +14,27 @@ function generateGrid(squarePerSide) {
   for (i = 0; i < (Math.pow(squarePerSide, 2)); i++){
     addBox();
   }
+
+  document.querySelectorAll('.box').forEach((box) => {
+    box.addEventListener('mouseover', (e) => {
+      box.classList.add('hover')
+    });
+  });
+
 }
+
+
+
+
 
 generateGrid(16)
 
-const gridItem = document.querySelectorAll('.box');
 
-gridItem.forEach((box) => {
-  box.addEventListener('mouseover', (e) => {
-    box.classList.add('hover')
-  });
-});
+const reset = document.querySelector('#reset');
+reset.onclick = () => {
+  let length = prompt('How many squares per side?');
+  document.querySelectorAll('.box').forEach((box) => {
+    container.removeChild(box)
+  })
+  generateGrid(length);
+}
